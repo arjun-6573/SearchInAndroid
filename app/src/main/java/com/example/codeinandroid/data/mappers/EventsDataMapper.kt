@@ -2,6 +2,7 @@ package com.example.codeinandroid.data.mappers
 
 import com.example.codeinandroid.domain.entity.EventEntity
 import com.example.codeinandroid.domain.entity.VenueEntity
+import com.example.codeinandroid.external.db.FavouriteEventsRoomEntity
 import com.example.codeinandroid.external.remote.EventsResponseModel
 import java.util.*
 
@@ -32,4 +33,6 @@ class EventsDataMapper {
             )
         }
     }
+
+    fun toFavouriteEventRoomModal(eventId: String) = FavouriteEventsRoomEntity(0, eventId)
 }
