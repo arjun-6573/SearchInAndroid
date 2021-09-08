@@ -17,6 +17,7 @@ import com.example.codeinandroid.external.remote.RequestInterceptor
 import com.example.codeinandroid.utils.AppConstant
 import com.example.codeinandroid.utils.dispatcher.MyDispatchers
 import com.example.codeinandroid.utils.dispatcher.MyDispatchersImpl
+import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -34,6 +35,7 @@ val appModule = module {
         }.setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
+    single { GsonBuilder().create() }
 
     single {
         OkHttpClient.Builder()
