@@ -18,7 +18,8 @@ class EventsDataMapper {
                 shortTitle,
                 performers.firstOrNull()?.image.orEmpty(),
                 toVenueEntity(venue),
-                Date()
+                Date(),
+                false
 //            TODO map date from API response
             )
         }

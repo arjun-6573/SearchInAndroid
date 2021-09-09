@@ -18,7 +18,8 @@ class EventsUIMapper {
                 eventName,
                 "WED, 12 JUN 2019 8:00 PM",
 //                todo format date
-                toAddress(venue)
+                toAddress(venue),
+                isFavourite
             )
         }
     }

@@ -34,8 +34,13 @@ class SearchEventsViewModel(
         }
     }
 
-    fun searchEvent(key: String?) = uiScope.launch {
-        if (searchKey == key) {
+    fun onRefresh() {
+        setLoading(true)
+        searchEvent(searchKey, true)
+    }
+
+    fun searchEvent(key: String?, refresh: Boolean = false) = uiScope.launch {
+        if (searchKey == key && refresh.not()) {
             return@launch
         }
         searchKey = key.orEmpty()

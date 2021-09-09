@@ -7,8 +7,10 @@ import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codeinandroid.databinding.FragmentSearchEventListBinding
+import com.example.codeinandroid.ui.SharedViewModel
 import com.example.codeinandroid.ui.base.BaseFragment
 import com.example.codeinandroid.ui.model.EventUIItemModel
+import org.koin.android.viewmodel.ext.android.getViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SearchEventsFragment : BaseFragment<FragmentSearchEventListBinding, SearchEventsViewModel>(),
@@ -17,6 +19,7 @@ class SearchEventsFragment : BaseFragment<FragmentSearchEventListBinding, Search
 
     private var callback: Callback? = null
     private val searchEventsViewModel: SearchEventsViewModel by viewModel()
+    private val sharedViewModel: SharedViewModel by lazy { requireParentFragment().getViewModel() }
     private var eventsAdapter: EventsAdapter? = null
 
     override fun getViewModel() = searchEventsViewModel
@@ -67,6 +70,12 @@ class SearchEventsFragment : BaseFragment<FragmentSearchEventListBinding, Search
                 it?.let { editable ->
                     searchEventsViewModel.searchEvent(editable.toString())
                 }
+            }
+        }
+
+        sharedViewModel.refreshEvents.observe(viewLifecycleOwner) {
+            if (it == true) {
+                searchEventsViewModel.onRefresh()
             }
         }
     }

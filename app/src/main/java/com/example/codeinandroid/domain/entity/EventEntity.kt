@@ -7,5 +7,6 @@ data class EventEntity(
     val eventName: String,
     val image: String,
     val venue: VenueEntity,
-    val dateTime: Date
+    val dateTime: Date,
+    var isFavourite: Boolean
 )

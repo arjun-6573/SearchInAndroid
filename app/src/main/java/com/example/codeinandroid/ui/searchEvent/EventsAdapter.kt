@@ -1,6 +1,7 @@
 package com.example.codeinandroid.ui.searchEvent
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -64,6 +65,7 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
                 root.setOnClickListener {
                     onItemClickListener.get()?.onEventClick(data)
                 }
+                imgFavourite.visibility = if (data.isFavourite) View.VISIBLE else View.GONE
             }
         }
     }

@@ -10,4 +10,5 @@ data class EventUIItemModel(
     val title: String,
     val dateTime: String,
     val address: String,
+    val isFavourite: Boolean
 ) : Parcelable
