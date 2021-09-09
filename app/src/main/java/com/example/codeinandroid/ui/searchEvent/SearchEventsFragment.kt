@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codeinandroid.databinding.FragmentSearchEventListBinding
 import com.example.codeinandroid.ui.base.BaseFragment
@@ -71,7 +72,11 @@ class SearchEventsFragment : BaseFragment<FragmentSearchEventListBinding, Search
     }
 
     override fun onEventClick(eventUIItemModel: EventUIItemModel) {
-//        TODO("Not yet implemented")
+        val direction =
+            SearchEventsFragmentDirections.actionSearchEventsFragmentToEventDetailsFragment(
+                eventUIItemModel
+            )
+        findNavController().navigate(direction)
     }
 
     interface Callback

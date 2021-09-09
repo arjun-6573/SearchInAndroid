@@ -14,6 +14,7 @@ import com.example.codeinandroid.domain.usecases.SearchEventsUseCase
 import com.example.codeinandroid.external.db.AppDatabase
 import com.example.codeinandroid.external.remote.MyApi
 import com.example.codeinandroid.external.remote.RequestInterceptor
+import com.example.codeinandroid.ui.eventDetails.EventDetailsViewModel
 import com.example.codeinandroid.ui.mappers.EventsUIMapper
 import com.example.codeinandroid.ui.searchEvent.SearchEventsViewModel
 import com.example.codeinandroid.utils.AppConstant
@@ -76,4 +77,5 @@ val appModule = module {
     factory { SearchEventsUseCase(get()) }
 
     viewModel { SearchEventsViewModel(get(), get(), get()) }
+    viewModel { EventDetailsViewModel(get(), get(), get()) }
 }
