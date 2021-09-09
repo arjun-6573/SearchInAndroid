@@ -11,7 +11,9 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import com.example.codeinandroid.ui.base.Result
+import com.example.codeinandroid.utils.AppConstant
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 
 
 class SearchEventsViewModel(
@@ -39,6 +41,7 @@ class SearchEventsViewModel(
         searchKey = key.orEmpty()
         pendingSearchJob?.cancel()
         pendingSearchJob = launch {
+            delay(AppConstant.SEARCH_DELAY)
             searchEventsUseCase.invoke(searchKey.orEmpty().trim())
                 .onCompletion { setLoading(false) }
                 .catch {
