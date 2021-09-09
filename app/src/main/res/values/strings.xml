@@ -2,6 +2,7 @@
     <string name="app_name">Code In Android</string>
     <string name="search">Search…</string>
     <string name="cancel">Cancel</string>
+    <string name="details">Details</string>
     <string name="please_wait">Please wait…</string>
     <string name="error_placeholder">Error: %1$s</string>
 </resources>
