@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Code In Android</string>
+    <string name="search">Search…</string>
+    <string name="cancel">Cancel</string>
 </resources>

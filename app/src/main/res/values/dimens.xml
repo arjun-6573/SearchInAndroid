@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="no_dp">0dp</dimen>
+    <dimen name="xx_small_dp">4dp</dimen>
+    <dimen name="x_small_dp">8dp</dimen>
+    <dimen name="small_dp">12dp</dimen>
+    <dimen name="medium_dp">16dp</dimen>
+    <dimen name="large_dp">24dp</dimen>
+    <dimen name="x_large_dp">32dp</dimen>
+    <dimen name="xx_large_dp">40dp</dimen>
+    <dimen name="xxx_large_dp">64dp</dimen>
+    <dimen name="event_image">80dp</dimen>
+    <dimen name="small_icon_size">24dp</dimen>
+</resources>
