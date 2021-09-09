@@ -24,13 +24,14 @@
         android:id="@+id/etSearch"
         android:layout_width="@dimen/no_dp"
         android:layout_height="@dimen/no_dp"
-        android:inputType="text"
         android:background="@drawable/drawable_rounded_rect"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="@dimen/x_small_dp"
         android:hint="@string/search"
+        android:inputType="text"
         android:padding="@dimen/x_small_dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray" />
 
     <TextView
         android:id="@+id/txtCancelSearch"
@@ -45,7 +46,6 @@
         android:layout_width="@dimen/no_dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/x_small_dp"
-        android:layout_marginTop="@dimen/medium_dp"
         android:layout_marginEnd="@dimen/x_small_dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"

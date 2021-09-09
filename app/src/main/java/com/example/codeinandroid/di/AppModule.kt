@@ -14,6 +14,8 @@ import com.example.codeinandroid.domain.usecases.SearchEventsUseCase
 import com.example.codeinandroid.external.db.AppDatabase
 import com.example.codeinandroid.external.remote.MyApi
 import com.example.codeinandroid.external.remote.RequestInterceptor
+import com.example.codeinandroid.ui.mappers.EventsUIMapper
+import com.example.codeinandroid.ui.searchEvent.SearchEventsViewModel
 import com.example.codeinandroid.utils.AppConstant
 import com.example.codeinandroid.utils.dispatcher.MyDispatchers
 import com.example.codeinandroid.utils.dispatcher.MyDispatchersImpl
@@ -22,6 +24,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -68,6 +71,9 @@ val appModule = module {
     single<EventsLocalDataSource> { EventsLocalDataSourceImpl(get(), get(), get()) }
     single<EventsRepository> { EventsRepositoryImpl(get(), get()) }
     single { EventsDataMapper() }
+    single { EventsUIMapper() }
     factory { MarkAndUnMarkEventAsFavouriteUseCase(get()) }
     factory { SearchEventsUseCase(get()) }
+
+    viewModel { SearchEventsViewModel(get(), get(), get()) }
 }
