@@ -4,6 +4,7 @@ import com.example.codeinandroid.domain.entity.EventEntity
 import com.example.codeinandroid.domain.entity.VenueEntity
 import com.example.codeinandroid.external.db.FavouriteEventsRoomEntity
 import com.example.codeinandroid.external.remote.EventsResponseModel
+import com.example.codeinandroid.utils.fromUTCToDate
 import java.util.*
 
 class EventsDataMapper {
@@ -18,9 +19,8 @@ class EventsDataMapper {
                 shortTitle,
                 performers.firstOrNull()?.image.orEmpty(),
                 toVenueEntity(venue),
-                Date(),
+                fromUTCToDate(datetimeUtc),
                 false
-//            TODO map date from API response
             )
         }
     }

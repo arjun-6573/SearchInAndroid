@@ -3,6 +3,7 @@ package com.example.codeinandroid.ui.mappers
 import com.example.codeinandroid.domain.entity.EventEntity
 import com.example.codeinandroid.domain.entity.VenueEntity
 import com.example.codeinandroid.ui.model.EventUIItemModel
+import com.example.codeinandroid.utils.formatDate
 
 class EventsUIMapper {
 
@@ -16,8 +17,7 @@ class EventsUIMapper {
                 id,
                 image,
                 eventName,
-                "WED, 12 JUN 2019 8:00 PM",
-//                todo format date
+                formatDate(dateTime),
                 toAddress(venue),
                 isFavourite
             )
