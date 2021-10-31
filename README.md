@@ -10,7 +10,7 @@ Before running the project please generate your own Client Id on **http://platfo
 - **DI (Dependency Injection)** Koin
 - **Networking** Retrofit + OK-Http
 - **Testing** JUnit + Mockk
-- **Others** Glide, Timber
+- **Others** Glide, Timber, LeakCanary
 
 ## Screenshots
 <img src="https://github.com/arjun-6573/SearchInAndroid/blob/main/screenshots/screen1.png" width=200 > <img src="https://github.com/arjun-6573/SearchInAndroid/blob/main/screenshots/screen2.png" width=200 > <img src="https://github.com/arjun-6573/SearchInAndroid/blob/main/screenshots/screen3.png" width=200 >
